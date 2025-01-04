@@ -1,4 +1,5 @@
 切图 
+```
 import torch
 from sam2.sam2_image_predictor import SAM2ImagePredictor
 
@@ -7,7 +8,9 @@ predictor = SAM2ImagePredictor.from_pretrained("facebook/sam2-hiera-large")
 with torch.inference_mode(), torch.autocast("cuda", dtype=torch.bfloat16):
     predictor.set_image(<your_image>)
     masks, _, _ = predictor.predict(<input_prompts>)
+```
 
+https://huggingface.co/qualcomm/Segment-Anything-Model/tree/main
     https://segment-anything.com/demo#
 
     https://github.com/Render-AI/segment-anything-2/blob/main/notebooks/image_predictor_example.ipynb
